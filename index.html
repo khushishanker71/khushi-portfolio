@@ -33,11 +33,6 @@
   img{max-width:100%; display:block;}
   .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
 
-  /* Sparkle signature element */
-  .sparkle{ display:inline-block; }
-  .sparkle svg{ display:block; }
-
-  /* NAV */
   nav{
     position:sticky; top:0; z-index:50;
     background:rgba(251,248,241,0.88);
@@ -57,30 +52,23 @@
     background:var(--ink); color:var(--paper); padding:10px 18px; border-radius:100px; font-size:13px;
     letter-spacing:0.02em;
   }
-  .menu-toggle{ display:none; }
 
-  /* HERO */
   .hero{
     position:relative; overflow:hidden;
-    padding:88px 0 64px;
+    padding:72px 0 64px;
     border-bottom:1px solid var(--line);
   }
   .hero-grid{
     display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
   }
-  .eyebrow{
-    font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:var(--signal); font-weight:600;
-    display:flex; align-items:center; gap:10px; margin-bottom:22px;
-  }
-  .eyebrow .rule{ width:34px; height:1px; background:var(--signal); display:inline-block;}
   .hero h1{
-    font-size:clamp(46px, 6.6vw, 88px);
-    line-height:0.98;
+    font-size:clamp(42px, 6vw, 78px);
+    line-height:1.04;
     font-weight:500;
   }
   .hero h1 em{ font-style:italic; color:var(--signal); font-weight:500; }
   .hero-sub{
-    margin-top:26px; font-size:18px; line-height:1.65; max-width:52ch; color:#3a382f;
+    margin-top:26px; font-size:18px; line-height:1.65; max-width:54ch; color:#3a382f;
   }
   .hero-actions{ margin-top:36px; display:flex; gap:14px; flex-wrap:wrap; }
   .btn{
@@ -95,25 +83,18 @@
 
   .hero-photo{
     position:relative; aspect-ratio:3/4; border-radius:6px; overflow:hidden;
-    background: linear-gradient(160deg,#2b2a26,#141311);
+    background:#1c1b18;
   }
+  .hero-photo img{ width:100%; height:100%; object-fit:cover; }
   .hero-photo .frame-label{
     position:absolute; bottom:16px; left:16px; color:var(--bone);
     font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
     display:flex; align-items:center; gap:8px;
+    text-shadow:0 1px 6px rgba(0,0,0,0.5);
   }
   .hero-photo .dot{ width:7px; height:7px; border-radius:50%; background:var(--signal); }
-  .hero-photo-inner{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    color:rgba(243,238,226,0.35); font-family:'Fraunces',serif; font-style:italic; font-size:20px; text-align:center; padding:24px;
-  }
 
-  .hero-sparkle-bg{
-    position:absolute; top:-60px; right:-60px; opacity:0.06; width:340px; height:340px; z-index:0;
-  }
-
-  /* SECTION LABELS */
-  .section{ padding:96px 0; border-bottom:1px solid var(--line); position:relative;}
+  .section{ padding:88px 0; border-bottom:1px solid var(--line); position:relative;}
   .section.dark{ background:var(--ink); color:var(--bone); border-bottom:1px solid rgba(243,238,226,0.12); }
   .section.dark .section-title{ color:var(--bone); }
   .section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:52px; flex-wrap:wrap;}
@@ -124,27 +105,23 @@
     font-size:clamp(32px,4vw,52px); font-weight:500;
   }
 
-  /* ABOUT */
   .about-grid{ display:grid; grid-template-columns:0.9fr 1.4fr; gap:64px; align-items:start;}
-  .about-lead{ font-size:26px; line-height:1.5; font-family:'Fraunces',serif; font-weight:400;}
-  .about-lead .cap{ font-size:64px; float:left; line-height:0.8; padding-right:8px; padding-top:6px; color:var(--signal); font-weight:500;}
+  .about-lead{ font-size:24px; line-height:1.5; font-family:'Fraunces',serif; font-weight:400;}
   .about-body p{ font-size:16px; line-height:1.75; color:#3a382f; margin-bottom:18px; }
   .about-tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top:24px;}
-  .tag{
-    border:1px solid var(--line); padding:8px 16px; border-radius:100px; font-size:13px; color:var(--ink);
-  }
+  .tag{ border:1px solid var(--line); padding:8px 16px; border-radius:100px; font-size:13px; color:var(--ink);}
 
-  /* SKILLS */
-  .skills-grid{
-    display:grid; grid-template-columns:repeat(4, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);
-  }
-  .skill-cell{
-    background:var(--paper); padding:26px 22px; min-height:120px; display:flex; flex-direction:column; justify-content:space-between;
-  }
-  .skill-cell .cert-tag{ font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--signal); font-weight:600;}
-  .skill-cell .cert-name{ font-family:'Fraunces',serif; font-size:17px; margin-top:14px; line-height:1.3;}
+  .skills-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); border-radius:8px; overflow:hidden;}
+  .skills-col{ padding:0; }
+  .skills-col + .skills-col{ border-left:1px solid var(--line); }
+  .skills-col-head{ padding:22px 28px; border-bottom:1px solid var(--line); background:var(--bone);}
+  .skills-col-head h3{ font-size:15px; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; font-family:'Space Grotesk',sans-serif;}
+  .cert-row{ display:flex; align-items:center; justify-content:space-between; padding:18px 28px; border-bottom:1px solid var(--line); gap:16px;}
+  .cert-row:last-child{ border-bottom:none; }
+  .cert-row .cert-name{ font-family:'Fraunces',serif; font-size:17px; }
+  .cert-row .cert-issuer{ font-size:12px; color:#78766b; margin-top:3px;}
+  .cert-badge{ font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--signal); font-weight:600; white-space:nowrap;}
 
-  /* WHAT I DO */
   .do-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
   .do-card{
     background:var(--paper); border:1px solid var(--line); border-radius:8px; overflow:hidden;
@@ -152,7 +129,7 @@
   }
   .do-card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px rgba(20,19,17,0.1);}
   .do-card-visual{
-    height:180px; background:var(--ink); position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden;
+    height:170px; background:var(--ink); position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden;
   }
   .do-card-visual span{ font-family:'Fraunces',serif; font-style:italic; color:rgba(243,238,226,0.5); font-size:15px;}
   .do-card-body{ padding:26px; }
@@ -160,7 +137,6 @@
   .do-card-body p{ font-size:14px; color:#5a584d; line-height:1.6; margin-bottom:18px;}
   .do-link{ font-size:13px; font-weight:600; display:inline-flex; align-items:center; gap:6px; border-bottom:1px solid var(--signal); padding-bottom:2px;}
 
-  /* WORK / CASE STUDIES */
   .case{
     display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center; padding:64px 0;
     border-bottom:1px solid rgba(243,238,226,0.12);
@@ -170,247 +146,15 @@
   .case.reverse{ direction:rtl; }
   .case.reverse > *{ direction:ltr; }
   .case-tag{ font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--signal); font-weight:600; margin-bottom:14px; display:block;}
-  .case h3{ font-size:clamp(26px,3vw,36px); margin-bottom:16px; color:var(--bone);}
+  .case h3{ font-size:clamp(24px,2.8vw,32px); margin-bottom:16px; color:var(--bone);}
   .case p{ font-size:15px; line-height:1.75; color:rgba(243,238,226,0.72); margin-bottom:24px;}
   .case-visual{
-    aspect-ratio:4/3; border-radius:8px; background:linear-gradient(135deg,#2a2a26,#171613);
-    border:1px solid rgba(243,238,226,0.14);
-    display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+    aspect-ratio:4/3; border-radius:8px; overflow:hidden; position:relative;
+    border:1px solid rgba(243,238,226,0.14); background:#1c1b18;
+    display:flex; align-items:center; justify-content:center;
   }
-  .case-visual span{ font-family:'Fraunces',serif; font-style:italic; color:rgba(243,238,226,0.35); font-size:16px; padding:20px; text-align:center;}
-  .case-visual .grain{ position:absolute; inset:0; background-image:radial-gradient(rgba(255,75,31,0.12) 1px, transparent 1px); background-size:14px 14px; opacity:.5;}
+  .case-visual img{ width:100%; height:100%; object-fit:cover; }
+  .case-visual.contain img{ object-fit:contain; padding:24px; background:#fff; }
 
-  /* CONTACT */
   .contact-section{ background:var(--ink); color:var(--bone); border-bottom:none; padding-bottom:64px;}
   .contact-title{
-    font-size:clamp(56px,10vw,140px); line-height:0.92; font-weight:500;
-  }
-  .contact-title em{ font-style:italic; color:var(--signal);}
-  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:56px;}
-  .contact-item{ border-top:1px solid rgba(243,238,226,0.18); padding-top:18px;}
-  .contact-item .label{ font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:rgba(243,238,226,0.5); margin-bottom:8px;}
-  .contact-item .value{ font-size:19px; font-family:'Fraunces',serif;}
-  .contact-item a:hover{ color:var(--signal); }
-  footer{ text-align:center; padding:28px 0; font-size:12px; color:rgba(243,238,226,0.4); background:var(--ink);}
-
-  @media (max-width: 860px){
-    .nav-links{ display:none; }
-    .hero-grid, .about-grid, .case, .case.reverse{ grid-template-columns:1fr; direction:ltr; }
-    .skills-grid{ grid-template-columns:repeat(2,1fr); }
-    .do-grid{ grid-template-columns:1fr; }
-    .contact-grid{ grid-template-columns:1fr; }
-    .hero-photo{ order:-1; }
-  }
-</style>
-</head>
-<body>
-
-<nav>
-  <div class="wrap">
-    <div class="nav-name">Khushi Shanker</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#work">Work</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a href="#contact" class="nav-cta">Let's connect</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow"><span class="rule"></span>Marketing Portfolio</div>
-      <h1>Ideas that<br>connect,<br><em>systems</em><br>that scale.</h1>
-      <p class="hero-sub">A strategy-led, storytelling-driven marketer turning brand ideas into campaigns that genuinely connect — where creativity meets the systems that bring it to life.</p>
-      <div class="hero-actions">
-        <a href="#work" class="btn btn-solid">View my work</a>
-        <a href="#" class="btn btn-outline">Download résumé</a>
-      </div>
-    </div>
-    <div class="hero-photo">
-      <div class="hero-photo-inner">— your portrait photo here —</div>
-      <div class="frame-label"><span class="dot"></span>Khushi Shanker, Dublin</div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="about">
-  <div class="wrap about-grid">
-    <div>
-      <span class="section-num">01 — About</span>
-      <h2 class="section-title">Hello, I'm<br>Khushi.</h2>
-    </div>
-    <div class="about-body">
-      <p class="about-lead"><span class="cap">A</span>strategy-led, storytelling-driven marketer passionate about turning brand ideas into campaigns that genuinely connect.</p>
-      <p>I thrive at the intersection of creativity and structure, where big ideas meet the systems that bring them to life. From growth strategy and brand positioning to integrated campaigns and paid social, I've worked across startups, fashion, and tech — building marketing rooted in insight, culture, and audience behaviour.</p>
-      <p>I'm particularly interested in content strategy, market research, and campaign planning that feels both thoughtful and human.</p>
-      <div class="about-tags">
-        <span class="tag">Brand Strategy</span>
-        <span class="tag">Content Strategy</span>
-        <span class="tag">Campaign Planning</span>
-        <span class="tag">Market Research</span>
-        <span class="tag">Paid Social</span>
-        <span class="tag">Email Marketing</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="skills">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="section-num">02 — Credentials</span>
-        <h2 class="section-title">Skills &amp; Certifications</h2>
-      </div>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-cell"><span class="cert-tag">Certification</span><span class="cert-name">GA — Digital Marketing &amp; Analytics</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">Meta Ads</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">Facebook Ads</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">Google Ads</span></div>
-      <div class="skill-cell"><span class="cert-tag">Cert. Course</span><span class="cert-name">Sales Funnels &amp; Customer Engagement</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">Google Keywords</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">LinkedIn Ads</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">Ahrefs SEO</span></div>
-      <div class="skill-cell"><span class="cert-tag">Mini Cert.</span><span class="cert-name">Go-to-Market Strategy &amp; Patreon Marketing</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">HubSpot</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">Semrush</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">Canva</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">WordPress</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">Mailchimp</span></div>
-      <div class="skill-cell"><span class="cert-tag">Certified</span><span class="cert-name">MS Excel</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="do">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="section-num">03 — What I Do</span>
-        <h2 class="section-title">Where I add<br>the most value.</h2>
-      </div>
-    </div>
-    <div class="do-grid">
-      <div class="do-card">
-        <div class="do-card-visual"><span>Campaigns</span></div>
-        <div class="do-card-body">
-          <h3>Campaigns</h3>
-          <p>End-to-end campaign strategy and creative concept development, from insight to execution across channels.</p>
-          <a href="#work" class="do-link">View my work →</a>
-        </div>
-      </div>
-      <div class="do-card">
-        <div class="do-card-visual"><span>Branding</span></div>
-        <div class="do-card-body">
-          <h3>Branding</h3>
-          <p>Positioning, brand voice, and content pillars that help audiences see themselves in the brands they love.</p>
-          <a href="#work" class="do-link">View my work →</a>
-        </div>
-      </div>
-      <div class="do-card">
-        <div class="do-card-visual"><span>Socials</span></div>
-        <div class="do-card-body">
-          <h3>Socials</h3>
-          <p>Organic and paid social strategy built on community, storytelling, and consistent brand communication.</p>
-          <a href="#work" class="do-link">View my work →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section dark" id="work">
-  <div class="wrap">
-    <div class="section-head">
-      <div>
-        <span class="section-num">04 — Selected Work</span>
-        <h2 class="section-title">Case studies.</h2>
-      </div>
-    </div>
-
-    <div class="case">
-      <div>
-        <span class="case-tag">Social Media · Mar Knitwear</span>
-        <h3>Growing an audience organically</h3>
-        <p>I created this social media strategy while working with Mar Knitwear to help the brand grow organically without relying on paid advertising. The goal was to build a stronger online identity through storytelling, community-focused content, behind-the-scenes visuals, and consistent brand communication.</p>
-        <a href="#" class="btn btn-outline" style="border-color:rgba(243,238,226,0.3); color:var(--bone);">View the full deck</a>
-      </div>
-      <div class="case-visual"><div class="grain"></div><span>Mar Knitwear<br>social content grid</span></div>
-    </div>
-
-    <div class="case reverse">
-      <div>
-        <span class="case-tag">Email Marketing · Board &amp; Brewed</span>
-        <h3>A 3-part email framework for repeat bookings</h3>
-        <p>Designed a full email marketing strategy for Board &amp; Brewed, a board game café in Dún Laoghaire, focused on building a community list and driving repeat bookings — community-list building via QR codes and event sign-ups, an 80/20 value-to-conversion content split, and automated sequences spanning welcome series, FOMO event reminders, and win-back offers.</p>
-        <a href="#" class="btn btn-outline" style="border-color:rgba(243,238,226,0.3); color:var(--bone);">View the full deck</a>
-      </div>
-      <div class="case-visual"><div class="grain"></div><span>Board &amp; Brewed<br>content mockups</span></div>
-    </div>
-
-    <div class="case">
-      <div>
-        <span class="case-tag">Ad Campaign · Bonkers.ie</span>
-        <h3>Make the switch. Skip the drama.</h3>
-        <p>I developed an emotionally-driven advertising campaign for Bonkers.ie, focused on reframing provider-switching as simple and stress-free for young Irish consumers. Led campaign positioning, behavioural research, and creative concept development across OOH, social, and digital touchpoints.</p>
-        <a href="#" class="btn btn-outline" style="border-color:rgba(243,238,226,0.3); color:var(--bone);">View the full deck</a>
-      </div>
-      <div class="case-visual"><div class="grain"></div><span>Bonkers.ie<br>OOH &amp; digital ads</span></div>
-    </div>
-
-    <div class="case reverse">
-      <div>
-        <span class="case-tag">Ad Campaign · Tuborg × D&amp;AD New Blood</span>
-        <h3>#OurPopOurCulture</h3>
-        <p>Repositioned Tuborg as a platform for grassroots culture, not just a beer brand. Developed a full integrated campaign spanning OOH, social, digital, and limited-edition artist collaborations — anchored by Tuborg Fondet. Hero idea: Soundspots, a tool mapping real local music scenes globally. Campaign line: "Noise complaint? More like influence."</p>
-        <a href="#" class="btn btn-outline" style="border-color:rgba(243,238,226,0.3); color:var(--bone);">View the full deck</a>
-      </div>
-      <div class="case-visual"><div class="grain"></div><span>Tuborg Soundspots<br>campaign concept</span></div>
-    </div>
-
-    <div class="case">
-      <div>
-        <span class="case-tag">Brand Experience &amp; Positioning · Mar Knitwear</span>
-        <h3>Turning admirers into buyers</h3>
-        <p>I positioned an independent Irish knitwear brand to convert admirers into buyers — not just fans of the craft, but people who see themselves in it. Developed brand strategy, content pillars, and a social campaign rooted in customer persona research and founder storytelling sessions.</p>
-        <a href="#" class="btn btn-outline" style="border-color:rgba(243,238,226,0.3); color:var(--bone);">View the full deck</a>
-      </div>
-      <div class="case-visual"><div class="grain"></div><span>Mar Knitwear<br>brand positioning</span></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section contact-section" id="contact">
-  <div class="wrap">
-    <span class="section-num">05 — Get in touch</span>
-    <h2 class="contact-title">Let's<br><em>connect.</em></h2>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="label">Email</div>
-        <div class="value"><a href="mailto:khushishanker71@gmail.com">khushishanker71@gmail.com</a></div>
-      </div>
-      <div class="contact-item">
-        <div class="label">Phone — Ireland</div>
-        <div class="value"><a href="tel:+353892495868">+353 89 249 5868</a></div>
-      </div>
-      <div class="contact-item">
-        <div class="label">Phone — India</div>
-        <div class="value"><a href="tel:+919030716290">+91 90307 16290</a></div>
-      </div>
-      <div class="contact-item">
-        <div class="label">LinkedIn</div>
-        <div class="value"><a href="https://www.linkedin.com/in/khushi-shanker-0732b8312" target="_blank">khushi-shanker</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>© 2026 Khushi Shanker. Built with care.</footer>
-
-</body>
-</html>
